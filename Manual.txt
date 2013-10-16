@@ -1,0 +1,62 @@
+Language Test Generator User Manual
+
+Contents of this folder:
+	htest.sh
+	Manual.txt
+	Test.java
+
+
+A. Get antlr4 library
+	1. open terminal and run the following commands
+	2. cd /usr/local/lib
+	3. curl -O http://www.antlr4.org/download/antlr-4.0-complete.jar
+
+
+B. Copy the contents of LangTestGen folder to the folder you have put your *.g4 file.
+
+
+C. Open terminal and go to the folder where your *.g4 file is.
+
+
+D. Run htest.sh script. (WARNING: after execution this script overwrites any files 
+                                  named "input.mol", "rules.par", "out.par" and any folder named "antlrOutput")
+
+	./htest.sh [langName] [startRuleName] [testCount]
+		1. langName is the name of your *.g4 file. langName of mol.g4 is mol
+		2. startRuleName is the name of the starting rule of your grammar
+		3. testCount is the number of times you want to generate code and test your grammar
+
+	If result of the test is not correct, Error will be printed for that test, script
+	will end immediately and all files will remain as they are for further investigation.
+	(Note: running the script again will change previous test case)
+
+
+E. Debugging
+	you can debug your grammar using the commands antlr4 and grun.
+
+	Note: for using antlr4 and grun the following commands must be executed in each new terminal opened:
+		1. export CLASSPATH=".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"
+		2. alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar -o ./antlrOutput'
+		3. alias grun='java org.antlr.v4.runtime.misc.TestRig'
+
+
+	1. Run antlr4 mol.g4    (mol.g4 is your grammar file)
+
+	2. Run javac ./antlrOutput/*.java
+
+	3. Run grun [grammarName] [startingRule] -[option]
+		grammarName is mol for our example
+		startingRule is your grammar's starting rule
+		option: a useful one is -gui. see antlr reference for other options
+
+
+Homayoon Farrahi
+
+
+
+
+
+
+
+
+
