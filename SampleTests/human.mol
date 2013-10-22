@@ -1,0 +1,10 @@
+module human{
+	height, weight : int;
+	male : bool;
+	isFat() : bool{
+		if( weight/(height*height) < 25) then
+			return false;
+		else
+			return ture;
+	}
+}

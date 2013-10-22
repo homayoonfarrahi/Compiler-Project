@@ -10,7 +10,7 @@ program	:	(module)* {System.out.println("Rule1");} ;
 
 
 
-module	:	tempId1=ID ('extends' tempId2=ID)? '{' (member)* '}' {System.out.print("Rule2 " + $tempId1.text);                                                                                                            if ($tempId2==null) System.out.println();                                                                                                              else System.out.println(" : " + $tempId2.text);} ;
+module	:	'module' tempId1=ID ('extends' tempId2=ID)? '{' (member)* '}' {System.out.print("Rule2 " + $tempId1.text);                                                                                                            if ($tempId2==null) System.out.println();                                                                                                              else System.out.println(" : " + $tempId2.text);} ;
 
 
 
@@ -143,7 +143,7 @@ CONSTBOOL:	'true' | 'false' ;			//TODO: NOT TESTED
 		
 
 
-ID	:	[a-zA-Z][a-zA-Z0-9]* ;			//TODO: MUST EXCLUDE KEYWORDS FROM IT
+ID	:	[a-zA-Z][a-zA-Z0-9_]* ;			//TODO: MUST EXCLUDE KEYWORDS FROM IT
 
 
 

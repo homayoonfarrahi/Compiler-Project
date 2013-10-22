@@ -1,0 +1,9 @@
+module program {
+	s : Shape(3 , 2 , true , Color(0,0,0) );
+	sq : Square;
+
+	main() : void{
+		sq := Square(3,2,true,Color(0,0,0),10);
+		s.move(sq.center_x,sq.center_y);
+	}
+}

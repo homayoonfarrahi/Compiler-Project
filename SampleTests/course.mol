@@ -1,0 +1,5 @@
+module course{
+	id : int;
+	credit : int;
+	undergrad : bool;
+}

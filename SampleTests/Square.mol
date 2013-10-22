@@ -1,0 +1,7 @@
+module Square extends Shape{
+	edge_length : int;
+	get_area() : int { %%output type of this method is int
+			return self.edge_length*edge_length;
+	}
+		set_color(c:color) : void {color:=c;}
+}

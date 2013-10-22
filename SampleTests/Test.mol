@@ -1,0 +1,22 @@
+module Shape{
+	%%member variables
+	center_x, center_y : int;
+	convex : bool;
+	color : Color(salam);
+	%% member method
+	move(nx : int, ny : int):void{ %%output type of the method is void
+		center_x := nx;
+		center_y := ny;
+		a := move(x,y);
+		a := Color(salam);
+	}
+	is_concenteric(sh : Shape): bool{
+		if(sh.center_x = center_x and sh.center_y = center_y) then
+			return true;
+		else
+			return false; %% the return value of the method
+	}
+}
+module Color{
+	r,b,g: int;
+}

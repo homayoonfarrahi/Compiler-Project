@@ -1,0 +1,14 @@
+module student extends human{
+	id : int;
+	passedCourse[100] : course;
+	passedCourseSize : int;
+	passedCredits() : int{
+		i,total : int;
+		i := 0 ;
+		total := 0;
+		while(i<passedCourseSize) do{
+			total:=total+passedCourse[i].credit;
+		}
+		return total;
+	}
+}
