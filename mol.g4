@@ -29,7 +29,7 @@ vardecl	:	ID ('['CONSTINT']')? (','ID ('['CONSTINT']')?)* ':' (type | cons) {Sys
 
 
 
-cons	:	ID'(' expr (','expr)* ')' {System.out.println("Rule7");} ; 		//TODO: CONS RULE IS AMBIGIOUS IN THE PROBLEM DESCRIPTION
+cons	:	ID'(' (expr (','expr)*)? ')' {System.out.println("Rule7");} ; 		//TODO: CONS RULE IS AMBIGIOUS IN THE PROBLEM DESCRIPTION
 
 
 
@@ -54,7 +54,7 @@ st	:	block {System.out.println("Rule9");}
 		
 		| ('break' | 'continue') ';' {System.out.println("Rule16");}
 		
-		| ('read' ID | 'write' expr) ';' {System.out.println("Rule17");}
+		| ('read' loc | 'write' expr) ';' {System.out.println("Rule17");}
 		;
 
 
